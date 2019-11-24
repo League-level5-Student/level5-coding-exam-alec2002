@@ -16,6 +16,7 @@ public class CodingExamB {
 	
 	
 	public static String getLoggingInfo(String fileName) {
+		
 		/*
 		 * 1. Complete the getLoggingInfoMethod.
 		 *    The method takes in a String for a file and returns a String. 
@@ -25,6 +26,45 @@ public class CodingExamB {
 		 *    the line number for where each TODO was found. 
 		*/
 		
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(fileName));
+			
+		String save = br.readLine();
+		String comments = "";
+		int num = 0;
+		
+		while (save != null) {
+			
+			for (int i = 0; i < save.length(); i++) {
+				if (save.charAt(i) == ':') {
+					i++;
+					comments += save.substring(i, save.length());
+				}
+			}
+			
+			save = br.readLine();
+			
+			
+			
+			
+			
+			
+			
+		}
+		System.out.println(" ");
+		System.out.println(comments);
+		
+		
+			
+		} catch (FileNotFoundException e) {
+			System.out.println("First try didn't work");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("While didn't work");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 		return "";
