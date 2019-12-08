@@ -31,13 +31,16 @@ public class CodingExamA {
 		String numSides = JOptionPane.showInputDialog("How many sides?");
 		int nummm = Integer.parseInt(numSides);
 
+Thread[] t = new Thread[numm];
+
+for (int i = 0; i < t.length; i++) {
+	int x = i*200;
+		t[i] = new Thread(()-> {
 		
-		Thread s1 = new Thread(()-> {
 		
-			int x = 100;
-		for (int i = 0; i < numm; i++) {
-			
 			Robot r = new Robot(x, 300);
+		
+			
 			
 			if (colorr.equals("red")) {
 				r.setPenColor(Color.RED);
@@ -49,24 +52,30 @@ public class CodingExamA {
 				r.setPenColor(Color.BLUE);
 			}
 			
-			x += 200;
 			r.penDown();
 		   r.setSpeed(10);
 		   
 		   
-		   for (int j = 0; j < nummm; j++) {
+		  
+		   for (int k = 0; k < nummm; k++) {
 			   r.move(100);
 			   r.turn(360/nummm);
-			
 		}
+			   
+			
+		
 			
 			
-		}
+		
 		
 		
 		} );
 		
-		s1.start();
+}
+		
+		for (int l = 0; l < t.length; l++) {
+			t[l].start();
+		}
 		
 	}
 }

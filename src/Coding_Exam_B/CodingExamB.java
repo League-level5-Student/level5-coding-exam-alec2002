@@ -36,9 +36,9 @@ public class CodingExamB {
 		while (save != null) {
 			
 			for (int i = 0; i < save.length(); i++) {
-				if (save.charAt(i) == ':') {
+				if (save.charAt(i) == 'O' && save.charAt(i+1) == ':') {
 					i++;
-					comments += save.substring(i, save.length());
+					comments += save.substring(i+1, save.length());
 				}
 			}
 			
